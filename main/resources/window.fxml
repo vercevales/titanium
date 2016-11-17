@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainAnchorPane" maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="800.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontend.Controller">
+   <children>
+      <SplitPane fx:id="splitPane" dividerPositions="0.1620775969962453" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane fx:id="leftAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="898.0" prefWidth="292.0">
+               <children>
+                  <Button fx:id="createButton" layoutX="7.0" layoutY="146.0" mnemonicParsing="false" onMouseClicked="#createButtonClicked" text="Create Space" />
+                   <Button fx:id="startButton" layoutX="9.0" layoutY="460.0" mnemonicParsing="false" onMouseClicked="#startButtonClicked" prefHeight="25.0" prefWidth="218.0" text="START" />
+                   <TextField fx:id="canvasWidthTextField" alignment="CENTER" layoutX="28.0" layoutY="30.0" prefHeight="25.0" prefWidth="64.0" text="300" />
+                  <Label layoutX="10.0" layoutY="9.0" prefHeight="17.0" prefWidth="100.0" text="Canvas Width:" />
+                  <TextField fx:id="alphaNucleiNumberTextField" alignment="CENTER" layoutX="80.0" layoutY="344.0" prefHeight="25.0" prefWidth="57.0" />
+                  <Label fx:id="nucleiNumberLabel" layoutX="9.0" layoutY="304.0" text="Number of nuclei:" />
+                  <TextField fx:id="meanAlphaGrainDiameterTextField" alignment="CENTER" layoutX="78.0" layoutY="273.0" prefHeight="25.0" prefWidth="57.0" text="2" />
+                  <Label fx:id="meanGrainDiameterLabel" layoutX="10.0" layoutY="233.0" text="Mean grain diameter:" />
+                  <Label fx:id="alphaPhaseLabel" layoutX="50.0" layoutY="181.0" text="Alpha phase percent:" />
+                  <TextField fx:id="alphaPhaseTextField" alignment="CENTER" layoutX="90.0" layoutY="202.0" prefHeight="25.0" prefWidth="57.0" text="50" />
+                  <CheckBox fx:id="noCorrectionCheckBox" layoutX="121.0" layoutY="435.0" mnemonicParsing="false" selected="true" text="No Correction" />
+                  <Label layoutX="127.0" layoutY="8.0" text="Canvas Height:" />
+                  <TextField fx:id="canvasHeightTextField" alignment="CENTER" layoutX="147.0" layoutY="30.0" prefHeight="25.0" prefWidth="71.0" text="200" />
+                  <CheckBox fx:id="drawBordersCheckBox" layoutX="4.0" layoutY="435.0" mnemonicParsing="false" text="Draw Borders" />
+                  <RadioButton fx:id="hexagonalRandomRadioButton" layoutX="6.0" layoutY="94.0" mnemonicParsing="false" onMouseClicked="#hexagonalClicked" selected="true" text="Hexagonal Random" />
+                  <RadioButton fx:id="mooreRadioButton" layoutX="167.0" layoutY="94.0" mnemonicParsing="false" onMouseClicked="#mooreClicked" text="Moore" />
+                  <Label layoutX="53.0" layoutY="71.0" text="Neighbourhood type:" />
+                  <Separator layoutX="23.0" layoutY="61.0" prefWidth="200.0" />
+                  <CheckBox fx:id="periodicCheckBox" layoutX="19.0" layoutY="119.0" mnemonicParsing="false" selected="true" text="Periodic Boundary Condition" />
+                  <Separator layoutX="21.0" layoutY="178.0" prefWidth="200.0" />
+                  <Separator layoutX="20.0" layoutY="426.0" prefWidth="200.0" />
+                  <Label fx:id="alphaLabel1" layoutX="89.0" layoutY="254.0" text="Alpha:" />
+                  <Label fx:id="betaLabel1" layoutX="165.0" layoutY="254.0" text="Beta:" />
+                  <Label fx:id="alphaLabel2" layoutX="91.0" layoutY="326.0" text="Alpha:" />
+                  <Label fx:id="betaLabel2" layoutX="167.0" layoutY="326.0" text="Beta:" />
+                  <TextField fx:id="meanBetaGrainDiameterTextField" layoutX="157.0" layoutY="273.0" prefHeight="26.0" prefWidth="57.0" text="2" />
+                  <TextField fx:id="betaNucleiNumberTextField" layoutX="158.0" layoutY="344.0" prefHeight="26.0" prefWidth="57.0" />
+                  <Button fx:id="resetButton" layoutX="87.0" layoutY="709.0" mnemonicParsing="false" onMouseClicked="#resetButtonClicked" text="RESET" />
+                  <Label fx:id="betaGrowthStartingPointLabel" layoutX="17.0" layoutY="378.0" text="Alpha growth after which Beta grows:">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="betaGrowthStartingPointTextField" layoutX="84.0" layoutY="392.0" prefHeight="26.0" prefWidth="79.0" text="0.0" />
+                  <Button fx:id="coarseningButton" layoutX="55.0" layoutY="636.0" mnemonicParsing="false" onMouseClicked="#coarseningButtonClicked" text="Start Coarsening" />
+                  <CheckBox fx:id="isothermalCheckBox" layoutX="75.0" layoutY="496.0" mnemonicParsing="false" onMouseClicked="#isothermalCheckBoxClicked" selected="true" text="Isothermal" />
+                  <TextField fx:id="startTemperatureTextField" layoutX="23.0" layoutY="550.0" prefHeight="25.0" prefWidth="79.0" />
+                  <TextField fx:id="endTemperatureTextField" layoutX="135.0" layoutY="550.0" prefHeight="25.0" prefWidth="79.0" />
+                  <Label fx:id="temperatureLabel" layoutX="35.0" layoutY="520.0" text="Temperature [C]:" />
+                  <Label fx:id="startTemperatureLabel" layoutX="23.0" layoutY="535.0" text="Start:" />
+                  <Label fx:id="endTemperatureLabel" layoutX="132.0" layoutY="535.0" text="End:" />
+                  <TextField fx:id="iterationsTextField" layoutX="32.0" layoutY="598.0" text="100" />
+                  <Separator layoutX="20.0" layoutY="493.0" prefWidth="200.0" />
+                  <Label fx:id="iterationsLabel" layoutX="84.0" layoutY="583.0" text="Iterations:" />
+                  <Separator layoutX="17.0" layoutY="668.0" prefWidth="200.0" />
+                  <Button fx:id="importSpaceButton" onMouseClicked="#importSpaceButtonClicked" layoutX="125.0" layoutY="146.0" mnemonicParsing="false" text="Import Space" />
+                  <Button fx:id="exportSpaceButton" onMouseClicked="#exportSpaceButtonClicked" layoutX="61.0" layoutY="677.0" mnemonicParsing="false" text="Export Space" />
+               </children></AnchorPane>
+          <AnchorPane fx:id="rightAnchorPane" prefHeight="16.0" prefWidth="2006.0">
+               <children>
+                  <GridPane fx:id="canvas" layoutX="5.0" layoutY="5.0" prefHeight="97.0" prefWidth="79.0">
+                  </GridPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
